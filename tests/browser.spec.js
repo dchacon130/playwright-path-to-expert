@@ -6,26 +6,30 @@ test.describe('Estructura basica de un script de Playwright', () => {
 
     test.beforeAll(async () => {
         browser = await chromium.launch({ headless: false });
+        console.log('--> Navegador creado');
+    });
+
+    test.beforeEach(async () => {
         page = await browser.newPage();
-        console.log('Navegador lanzado y nueva pagina creada');
+        console.log('--> Pagina creada');
     });
 
-    test.beforeEach(async ({ page }) => {
-
+    test('Este seria el primer test', async () => {
+        
     });
 
-    test('Este seria el primer test', async ({ page }) => {
-
-    });
-
-    test.afterEach(async ({ page }) => {
-
+    test.afterEach(async () => {
+        if(page){
+            await page.close();
+            console.log('--> Pagina cerrada');
+        }
+        
     });
 
     test.afterAll(async () => {
         if (browser) {
             await browser.close();
-            console.log('Navegador cerrado.')
+            console.log('--> Navegador cerrado.')
         }
     });
 });
