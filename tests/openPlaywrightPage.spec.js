@@ -3,7 +3,7 @@ import { test, chromium, webkit, firefox } from '@playwright/test';
 let browser;
 
 test.beforeAll(async () => {
-    browser = await firefox.launch({ headless: true });
+    browser = await firefox.launch({ headless: false });
     console.log('--- Navegador lanzado ---');
 });
 
