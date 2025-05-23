@@ -1,9 +1,9 @@
-import { test, expect, chromium } from '@playwright/test';
+import { test, chromium, webkit, firefox } from '@playwright/test';
 
 let browser;
 
 test.beforeAll(async () => {
-    browser = await chromium.launch({ headless: true });
+    browser = await firefox.launch({ headless: true });
     console.log('--- Navegador lanzado ---');
 });
 
