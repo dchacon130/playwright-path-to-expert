@@ -8,7 +8,7 @@ test.describe('Estructura basica de un script de Playwright', () => {
     let page2;
     let context2;
 
-    test.beforeAll(async () => {
+    /*test.beforeAll(async () => {
         browser = await webkit.launch({ headless: false });
         console.log('--> Navegador webkit creado');
         
@@ -24,10 +24,10 @@ test.describe('Estructura basica de un script de Playwright', () => {
         console.log(`BrowserContext: ${browser.contexts()}`);
         console.log(`Is Connected: ${browser.isConnected()}`);
         console.log('--> Navegador creado');
-    });
+    });*/
 
-    test.beforeEach(async () => {
-        page = await browser.newPage();
+    test.beforeEach(async ({page}) => {
+        //page = await browser.newPage();
         console.log('--> Pagina creada');
     });
 
@@ -35,7 +35,7 @@ test.describe('Estructura basica de un script de Playwright', () => {
         
     });
 
-    test.afterEach(async () => {
+    test.afterEach(async ({page}) => {
         if(page){
             await page.close();
             console.log('--> Pagina cerrada');
@@ -43,7 +43,7 @@ test.describe('Estructura basica de un script de Playwright', () => {
         
     });
 
-    test.afterAll(async () => {
+    /*test.afterAll(async () => {
         if (browser) {
             await browser.close();
             console.log('--> Navegador cerrado.')
@@ -54,5 +54,5 @@ test.describe('Estructura basica de un script de Playwright', () => {
         else if(context2){
             context2.close();
         }
-    });
+    });*/
 });
