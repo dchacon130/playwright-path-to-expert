@@ -22,7 +22,7 @@ test.describe('Estructura basica de un script de Playwright', () => {
 
     });
 
-    test.beforeAll(async () => {
+    test.afterAll(async () => {
         if (browser) {
             await browser.close();
             console.log('Navegador cerrado.')
