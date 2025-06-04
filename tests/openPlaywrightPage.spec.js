@@ -2,7 +2,7 @@ import { test, chromium, webkit, firefox } from '@playwright/test';
 
 let browser;
 
-test.beforeAll(async () => {
+test.beforeEach(async () => {
     browser = await firefox.launch({ headless: false });
     console.log('--- Navegador lanzado ---');
 });
@@ -22,7 +22,7 @@ test.describe('Abrir una pagina cualquiera', () => {
     });
 });
 
-test.afterAll(async () => {
+test.afterEach(async () => {
     if (browser) {
         await browser.close();
         console.log('--- Navegador cerrado ---')
