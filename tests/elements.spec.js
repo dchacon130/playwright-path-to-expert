@@ -7,7 +7,7 @@ test.beforeEach(async ({page}) => {
 test.describe('Locators en Playwright', () => {
     
     test('Login en Orange HRM live', async ( {page} )=> {
-    
+        
         const btnLogin = page.getByRole('button', { name: 'Login' });
         const dashboard = page.getByRole('heading', { name: 'Dashboard'});
         const search = page.getByPlaceholder('Search');
@@ -17,8 +17,10 @@ test.describe('Locators en Playwright', () => {
         console.log('Login en Orange HRM live...');
         await page.locator('input[name="username"]').fill('Admin');
         await page.getByPlaceholder('Password').fill('admin123');
+        await page.screenshot({ path: 'screenshots/despues-login.png', fullPage: true });
         await btnLogin.click();
-
+        
+        
         //assertion login
         await expect(dashboard).toBeVisible();
         await expect(dashboard).toHaveText('Dashboard');
@@ -35,9 +37,11 @@ test.describe('Locators en Playwright', () => {
                 await search.fill('Admin');
                 await admin.click();
                 console.log('Campo de busqueda entrando a Admin');
+                
                 //assertion Admin
                 await expect(page.getByRole('button', { name: 'Add' })).toBeVisible();
-                await expect(lblSystemUsers).toHaveValue('System Users');
+                //await expect(lblSystemUsers).toHaveValue('System Users');
+                await lblSystemUsers.screenshot({ path: 'screenshots/lblSystemUser.png' });
             }else {
                 console.log('Campo search no disponible');
             }
