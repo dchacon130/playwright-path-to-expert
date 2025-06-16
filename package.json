@@ -12,7 +12,9 @@
     "test:webkit:headed": "npx playwright test --project=chromium --headed",
     "test:debug": "npx playwright test --debug",
     "test:ui": "npx playwright test --ui",
-    "test:report": "npx playwright test show-report"
+    "test:report": "npx playwright test show-report",
+    "test:smoke": "npx playwright test --grep '@smoke'",
+    "test:forms": "npx playwright test --grep '@forms'"
   },
   "repository": {
     "type": "git",
