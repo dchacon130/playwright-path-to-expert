@@ -1,5 +1,4 @@
 import { expect, test } from '@playwright/test';
-import { request } from 'http';
 
 test.beforeEach(async ({page}) => {
     const requestPromise = page.waitForRequest('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
@@ -12,7 +11,7 @@ test.beforeEach(async ({page}) => {
 
 test.describe('Locators en Playwright', () => {
     
-    test('Login en Orange HRM live', async ( {page} )=> {
+    test('Login en Orange HRM live', async ( {page} ) => {
         //waits
         const btnLogin = page.getByRole('button', { name: 'Login' });
         const dashboard = page.getByRole('heading', { name: 'Dashboard'});
@@ -67,8 +66,9 @@ test.describe('Locators en Playwright', () => {
             console.log('Error en el campo de busqueda Menú: ', error.message);
         }
     });
-    
 });
+
+
 
 test.afterEach(async ({page}) => {
     await page.close();
