@@ -15,11 +15,11 @@ test.describe('Eventos de Teclado y Ratón', () => {
         
         for(let i = 0; i < cantidadFiguras; i++){
             console.log('Estamos en el for', i);
-            const figura = figuras.nth(i);
-
+            //const figura = figuras.nth(i).hover();
+            await figuras.nth(i).hover();
             const nameUser = page.locator('#content');
 
-            await figura.hover();
+            //await figura.hover();
             await expect(nameUser).toContainText(`name: user${i+1}`);
             console.log(`name: user${i+1}`);
         }
