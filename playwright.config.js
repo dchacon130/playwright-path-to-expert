@@ -18,7 +18,7 @@ export default defineConfig({
   globalSetup: './utils/global-setup.js',
   globalTeardown: './utils/global-teardown.js',
   
-  globalTimeout: 3_600_000,
+  //globalTimeout: 3_600_000,
 
   /* Run tests in files in parallel */
   fullyParallel: true,
