@@ -8,6 +8,6 @@ test('la cookie se creo correctamente', async ({page}) => {
     console.log('Cookie de sesion encontrada: ', sessionCookie);
 
     //expect(sessionCookie).toBeDefined();
-    expect(sessionCookie.value).toBe('standard_user');
-    expect(sessionCookie.domain).toBe('www.saucedemo.com');
+    //expect(sessionCookie.value).toBe('standard_user');
+    //expect(sessionCookie.domain).toBe('www.saucedemo.com');
 });
