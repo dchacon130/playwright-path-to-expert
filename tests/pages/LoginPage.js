@@ -10,6 +10,10 @@ export class LoginPage{
         await this.page.goto('https://www.saucedemo.com/');
     }
 
+    async goto_inventory(){
+        await this.page.goto('https://www.saucedemo.com/inventory.html');
+    }
+
     async login(username, password){
         await this.inputUserName.fill(username);
         await this.inputPassword.fill(password);
